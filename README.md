@@ -1,56 +1,46 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# To Do list with Webpack
 
-> Description the project.
-
+> n this project, I build a simple HTML list of To Do tasks. This simple web page will be built using webpack and served by a webpack dev server.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML
+- CSS
+- Webpack
+- Javascript
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://livedemo.com)
-
+[Live Demo Link](https://xsidx.github.io/todo-list-with-webpack/)
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+## Prerequisites
 
+- Git/Github
+- VSCode or another equivalent tool
+- knowledge in HTML, Javascript and Webpack
 
-To get a local copy up and running follow these simple example steps.
+## Install
 
-### Prerequisites
+- To install locally run, _git clone git@github.com:XsidX/todo-list-with-webpack.git_, in your terminal.
+- open the cloned directory with VSCode
+- install live server extension for VSCode.
+- right click on the index.html file and select open with live server.
 
-### Setup
+## Usage
 
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
+You're free to use this project however you like it for educational purposes.
 
 ## Authors
 
-👤 **Author1**
+👤 **Sidney**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [XsidX](https://github.com/XsidX)
+- Twitter: [@\_sid_o](https://twitter.com/_sid_o_)
+- LinkedIn: [Sidney Kaguli](https://www.linkedin.com/in/sidney-kaguli-0116801a6/)
 
 ## 🤝 Contributing
 
@@ -64,9 +54,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+-Microverse module 2, block 2, To Do list:... activity/lesson.
 
 ## 📝 License
 
