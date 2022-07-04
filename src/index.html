@@ -3,9 +3,95 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wbpack Exercise</title>
+    <title>Todo List | With Webpack 5</title>
   </head>
   <body>
-    <h1>Hello webpack!!!!!!</h1>
+    <div class="container">
+      <div class="row title">
+        <h1>Today's To Do</h1>
+        <svg
+          class="refresh"
+          width="11px"
+          height="11px"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px"
+          y="0px"
+          viewBox="0 0 512.002 512.002"
+          xml:space="preserve"
+        >
+          <path
+            fill="#818183"
+            d="M436.866,436.871c48.312-48.311,74.921-112.546,74.921-180.871
+            c0-141.039-114.744-255.785-255.783-255.786v49.507c113.741,0.002,206.276,92.539,206.276,206.279
+            c0,55.101-21.458,106.902-60.42,145.864l-7.571,7.571l-67.552-67.552l0.021,170.076l170.096,0.041l-67.559-67.559L436.866,436.871z"
+          />
+          <path
+            fill="#818183"
+            d="M49.724,256.001c0-55.101,21.458-106.902,60.42-145.864l7.571-7.571l67.552,67.552L185.245,0.041
+            L15.148,0l67.559,67.559l-7.571,7.57C26.824,123.439,0.215,187.675,0.215,255.999c0,141.039,114.744,255.785,255.783,255.786
+            v-49.507C142.258,462.278,49.724,369.742,49.724,256.001z"
+          />
+        </svg>
+      </div>
+      <form action="#">
+        <div class="add-item row">
+          <input type="text" placeholder="Add to your list..." />
+          <svg
+            width="10"
+            height="10px"
+            viewBox="0 0 1024 1024"
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon"
+          >
+            <path
+              fill="#818183"
+              d="M864 170h-60c-4.4 0-8 3.6-8 8v518H310v-73c0-6.7-7.8-10.5-13-6.3l-141.9 112a8 8 0 0 0 0 12.6l141.9 112c5.3 4.2 13 .4 13-6.3v-75h498c35.3 0 64-28.7 64-64V178c0-4.4-3.6-8-8-8z"
+            />
+          </svg>
+        </div>
+        <div class="row list-item">
+          <svg class="icon-check">
+            <use
+              xlink:href="/web/20180320194056mp_/http://www.getminimalist.com/assets/icons.svg#icon-check"
+            ></use>
+          </svg>
+          <input type="text" />
+          <svg
+            width="25px"
+            height="30px"
+            class="move"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+              fill="#b6b6b8"
+            ></path>
+          </svg>
+        </div>
+        <div class="row list-item">
+          <svg class="icon-check">
+            <use
+              xlink:href="/web/20180320194056mp_/http://www.getminimalist.com/assets/icons.svg#icon-check"
+            ></use>
+          </svg>
+          <input type="text" />
+          <svg
+            width="25px"
+            height="30px"
+            class="move"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+              fill="#b6b6b8"
+            ></path>
+          </svg>
+        </div>
+      </form>
+      <div class="row clear"><p>Clear all completed</p></div>
+    </div>
   </body>
 </html>
