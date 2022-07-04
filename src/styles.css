@@ -34,7 +34,7 @@ body {
   display: flex;
   align-items: center;
   list-style: none;
-  border-bottom: 1px solid #dcdcdf;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (min-width: 768px) {
@@ -53,8 +53,20 @@ h1 {
   color: #545862;
 }
 
-.refresh {
+.icon-refresh {
   margin-right: 6px;
+  cursor: pointer;
+  animation: rotation 1s linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(180deg);
+  }
 }
 
 .add-item {
@@ -64,11 +76,29 @@ h1 {
   margin-right: 6px;
 }
 
+.add-item .icon-enter {
+  cursor: pointer;
+}
+
 .list-item {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 15px;
+  transition: all ease-in 200ms;
+}
+
+.todo-item {
+  cursor: default;
+  transition: all ease-in 200ms;
+}
+
+.list-item:focus-within {
+  background-color: #fffeca;
+}
+
+.todo-item:focus {
+  background-color: #fffeca;
 }
 
 .icon-check {
@@ -82,6 +112,7 @@ h1 {
 .container input {
   box-sizing: border-box;
   width: 100%;
+  height: 100%;
   border: none;
   outline: none;
   padding: 5px 0;
@@ -91,6 +122,10 @@ h1 {
 .container input::placeholder {
   font-size: 15px;
   font-style: italic;
+}
+
+.icon-move {
+  cursor: move;
 }
 
 .clear {
