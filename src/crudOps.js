@@ -96,4 +96,6 @@ const updateTodos = (el) => {
 };
 // localStorage.clear();
 
-export { Store, displayTodo, createTodo, deleteTodo, updateTodos };
+export {
+  Store, displayTodo, createTodo, deleteTodo, updateTodos,
+};
