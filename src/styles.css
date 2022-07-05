@@ -110,6 +110,15 @@ h1 {
   background-color: #fffeca;
 }
 
+.list-item:focus-within .delete {
+  display: inline;
+  margin-right: 10px;
+}
+
+.list-item:focus-within .icon-move {
+  display: none;
+}
+
 .icon-check {
   width: 12px;
   height: 12px;

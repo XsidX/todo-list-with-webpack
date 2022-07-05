@@ -42,7 +42,7 @@ const displayTodo = ({ description, index }) => {
   listItem.innerHTML = `
     <span class="icon-check"></span>
     <input class="todo-item" type="text" data-todo="${index}" value=${description} />
-    <i class="fa-solid fa-trash-can delete" data-del="${index}"></i>
+    <i class="fa-solid fa-trash-can delete display-none" data-del="${index}"></i>
     <svg
       width="25px"
       height="30px"
