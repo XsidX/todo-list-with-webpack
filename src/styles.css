@@ -21,10 +21,22 @@ body {
   }
 }
 
+button {
+  border: none;
+  background: transparent;
+}
+
+.display-none {
+  display: none;
+}
+
+.test {
+  border: solid red 1px;
+}
+
 .container {
   background-color: #fff;
-  filter:
-    drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
     drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
 }
 
@@ -93,10 +105,7 @@ h1 {
   transition: all ease-in 200ms;
 }
 
-.list-item:focus-within {
-  background-color: #fffeca;
-}
-
+.list-item:focus-within,
 .todo-item:focus {
   background-color: #fffeca;
 }
@@ -126,6 +135,12 @@ h1 {
 
 .icon-move {
   cursor: move;
+}
+
+.fa-trash-can {
+  color: #b6b6b8;
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 .clear {
