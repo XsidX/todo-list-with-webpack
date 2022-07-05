@@ -19,12 +19,14 @@ const todo = [
 ];
 
 const sortedTodo = todo.sort((prev, next) => prev.index - next.index);
-
 const form = document.getElementById('form');
-sortedTodo.forEach(({ description }) => {
-  const listItem = document.createElement('div');
-  listItem.className = 'row list-item';
-  listItem.innerHTML = `
+const container = document.querySelector('.container');
+
+const displayTodo = () => {
+  sortedTodo.forEach(({ description }) => {
+    const listItem = document.createElement('div');
+    listItem.className = 'row list-item';
+    listItem.innerHTML = `
     <svg class="icon-check">
       <use
         xlink:href="/web/20180320194056mp_/http://www.getminimalist.com/assets/icons.svg#icon-check"
@@ -45,5 +47,8 @@ sortedTodo.forEach(({ description }) => {
     </svg>
   `;
 
-  form.appendChild(listItem);
-});
+    form.appendChild(listItem);
+  });
+};
+
+container.addEventListener('load', displayTodo());
