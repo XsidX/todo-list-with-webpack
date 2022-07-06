@@ -7,11 +7,12 @@ import '@fortawesome/fontawesome-free/js/regular';
 import {
   Store, displayTodo, createTodo, updateTodos,
 } from './crudOps.js';
-import updateStatus from './status';
+import { updateStatus, clearCompleted } from './status';
 import './styles.css';
 
 const form = document.getElementById('form');
 const listContainer = document.querySelector('.list-container');
+const clear = document.querySelector('.clear');
 
 window.addEventListener('load', displayTodo);
 
@@ -37,8 +38,10 @@ listContainer.addEventListener('click', (e) => {
 });
 
 listContainer.addEventListener('click', (e) => {
-  const clicked = e.target.closest('.icon-check');
+  const clicked = e.target.closest('.check-box');
   if (!clicked) return;
 
   updateStatus(clicked);
 });
+
+clear.addEventListener('click', clearCompleted);

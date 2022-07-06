@@ -33,11 +33,14 @@ const listContainer = document.querySelector('.list-container');
 const displayTodo = () => {
   listContainer.innerHTML = '';
   const todos = Store.getTodos();
-  todos.forEach(({ description, index }) => {
+  todos.forEach(({ description, completed, index }) => {
     const listItem = document.createElement('div');
     listItem.className = `row list-item list-item-${index}`;
     listItem.innerHTML = `
-    <span class="icon-check" data-done="${index}"></span>
+    <button class="check-box" data-ind="${index}">
+      <span class="icon-check" data-completed="${completed}"></span>
+      <i class="fa-solid fa-check" data-completed="${completed}"></i>
+    </button>
     <input class="todo-item" type="text" data-todo="${index}" value=${description} />
     <button class="delete" data-del="${index}"><i class="fa-solid fa-trash-can" ></i></button>
     <svg
