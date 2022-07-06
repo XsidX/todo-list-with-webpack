@@ -4,9 +4,8 @@ import '@fortawesome/fontawesome-free/js/fontawesome';
 import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
 
-import {
-  Store, displayTodo, createTodo, updateTodos,
-} from './crudOps.js';
+import { Store, displayTodo, createTodo, updateTodos } from './crudOps.js';
+import updateStatus from './status';
 import './styles.css';
 
 const form = document.getElementById('form');
@@ -33,4 +32,11 @@ listContainer.addEventListener('click', (e) => {
   if (!clicked) return;
 
   updateTodos(clicked);
+});
+
+listContainer.addEventListener('click', (e) => {
+  const clicked = e.target.closest('.icon-check');
+  if (!clicked) return;
+
+  updateStatus(clicked);
 });

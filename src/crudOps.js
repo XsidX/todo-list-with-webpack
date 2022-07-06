@@ -37,7 +37,7 @@ const displayTodo = () => {
     const listItem = document.createElement('div');
     listItem.className = `row list-item list-item-${index}`;
     listItem.innerHTML = `
-    <span class="icon-check"></span>
+    <span class="icon-check" data-done="${index}"></span>
     <input class="todo-item" type="text" data-todo="${index}" value=${description} />
     <button class="delete" data-del="${index}"><i class="fa-solid fa-trash-can" ></i></button>
     <svg
@@ -89,6 +89,4 @@ const updateTodos = (el) => {
   });
 };
 
-export {
-  Store, displayTodo, createTodo, updateTodos,
-};
+export { Store, displayTodo, createTodo, updateTodos };
