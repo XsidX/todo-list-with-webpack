@@ -8,6 +8,7 @@ module.exports = {
     index: './src/index.js',
     crud: './src/crudOps.js',
   },
+  devtool: 'inline-source-map',
   devServer: {
     static: './dist',
   },
