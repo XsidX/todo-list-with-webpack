@@ -21,6 +21,19 @@ body {
   }
 }
 
+button {
+  border: none;
+  background: transparent;
+}
+
+.display-none {
+  display: none;
+}
+
+.test {
+  border: solid red 1px;
+}
+
 .container {
   background-color: #fff;
   filter:
@@ -93,10 +106,7 @@ h1 {
   transition: all ease-in 200ms;
 }
 
-.list-item:focus-within {
-  background-color: #fffeca;
-}
-
+.list-item:focus-within,
 .todo-item:focus {
   background-color: #fffeca;
 }
@@ -124,8 +134,28 @@ h1 {
   font-style: italic;
 }
 
+.delete {
+  display: none;
+  z-index: 5;
+}
+
+.list-item:focus-within .delete {
+  display: inline;
+}
+
 .icon-move {
   cursor: move;
+}
+
+.list-item:focus-within .icon-move {
+  display: none;
+}
+
+.fa-trash-can {
+  color: #b6b6b8;
+  opacity: 0.7;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
 .clear {
