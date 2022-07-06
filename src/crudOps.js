@@ -89,4 +89,6 @@ const updateTodos = (el) => {
   });
 };
 
-export { Store, displayTodo, createTodo, updateTodos };
+export {
+  Store, displayTodo, createTodo, updateTodos,
+};

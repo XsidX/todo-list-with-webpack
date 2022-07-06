@@ -4,7 +4,9 @@ import '@fortawesome/fontawesome-free/js/fontawesome';
 import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
 
-import { Store, displayTodo, createTodo, updateTodos } from './crudOps.js';
+import {
+  Store, displayTodo, createTodo, updateTodos,
+} from './crudOps.js';
 import updateStatus from './status';
 import './styles.css';
 
