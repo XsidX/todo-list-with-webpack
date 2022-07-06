@@ -1,14 +1,6 @@
 class Store {
   // get todo items from local storage
-  static getTodos = () => {
-    let todos;
-    if (localStorage.getItem('todos') === null) {
-      todos = [];
-    } else {
-      todos = JSON.parse(localStorage.getItem('todos'));
-    }
-    return todos;
-  };
+  static getTodos = () => JSON.parse(localStorage.getItem('todos')) || [];
 
   // add todo item to local storage
   static addTodo = (todo) => {
@@ -27,22 +19,27 @@ class Store {
   // remove todo item from local storage
   static deleteTodo = (ind) => {
     const todos = this.getTodos();
-
     const newTodos = todos.filter((todo) => todo.index !== ind);
-
-    localStorage.setItem('todos', JSON.stringify(newTodos));
+    let indexedTodo = [];
+    newTodos.forEach((todo, todoIndex) => {
+      todo.index = todoIndex;
+      indexedTodo = [...indexedTodo, todo];
+    });
+    localStorage.setItem('todos', JSON.stringify(indexedTodo));
   };
 }
 
-const form = document.getElementById('form');
-
-const displayTodo = ({ description, index }) => {
-  const listItem = document.createElement('div');
-  listItem.className = 'row list-item';
-  listItem.innerHTML = `
+const listContainer = document.querySelector('.list-container');
+const displayTodo = () => {
+  listContainer.innerHTML = '';
+  const todos = Store.getTodos();
+  todos.forEach(({ description, index }) => {
+    const listItem = document.createElement('div');
+    listItem.className = `row list-item list-item-${index}`;
+    listItem.innerHTML = `
     <span class="icon-check"></span>
     <input class="todo-item" type="text" data-todo="${index}" value=${description} />
-    <i class="fa-solid fa-trash-can delete" data-del="${index}"></i>
+    <button class="delete" data-del="${index}"><i class="fa-solid fa-trash-can" ></i></button>
     <svg
       width="25px"
       height="30px"
@@ -57,7 +54,8 @@ const displayTodo = ({ description, index }) => {
     </svg>
   `;
 
-  form.appendChild(listItem);
+    listContainer.appendChild(listItem);
+  });
 };
 
 const createTodo = () => {
@@ -70,18 +68,14 @@ const createTodo = () => {
   const todo = {
     description: `${description}`,
     completed: false,
-    index: `${Store.getTodos().length + 1}`,
+    index: `${Store.getTodos().length}`,
   };
-
-  // add new todo to UI
-  displayTodo(todo);
 
   // add new todo to local storage
   Store.addTodo(todo);
-};
 
-const deleteTodo = (el) => {
-  el.parentElement.remove();
+  // add new todo to UI
+  displayTodo();
 };
 
 const updateTodos = (el) => {
@@ -94,8 +88,7 @@ const updateTodos = (el) => {
     Store.updateTodos(todos);
   });
 };
-// localStorage.clear();
 
 export {
-  Store, displayTodo, createTodo, deleteTodo, updateTodos,
+  Store, displayTodo, createTodo, updateTodos,
 };

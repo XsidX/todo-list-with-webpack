@@ -110,15 +110,6 @@ h1 {
   background-color: #fffeca;
 }
 
-/* .list-item:focus-within .delete {
-  display: inline;
-  margin-right: 10px;
-}
-
-.list-item:focus-within .icon-move {
-  display: none;
-} */
-
 .icon-check {
   width: 12px;
   height: 12px;
@@ -142,14 +133,28 @@ h1 {
   font-style: italic;
 }
 
+.delete {
+  display: none;
+  z-index: 5;
+}
+
+.list-item:focus-within .delete {
+  display: inline;
+}
+
 .icon-move {
   cursor: move;
+}
+
+.list-item:focus-within .icon-move {
+  display: none;
 }
 
 .fa-trash-can {
   color: #b6b6b8;
   opacity: 0.7;
   cursor: pointer;
+  margin-right: 10px;
 }
 
 .clear {
