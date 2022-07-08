@@ -41,7 +41,7 @@ listContainer.addEventListener('click', (e) => {
   const clicked = e.target.closest('.check-box');
   if (!clicked) return;
 
-  updateStatus(clicked);
+  updateStatus(+clicked.dataset.ind);
 });
 
 clear.addEventListener('click', clearCompleted);

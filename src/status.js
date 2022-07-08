@@ -1,14 +1,9 @@
 import { Store, displayTodo } from './crudOps.js';
 
-const updateStatus = (clicked) => {
+const updateStatus = (ind) => {
   const todos = Store.getTodos();
-  let todosStatus = [];
-  todos.forEach((todo) => {
-    if (todo.index === clicked.dataset.ind) {
-      todo.completed = !todo.completed;
-      todosStatus = [...todosStatus, todo];
-    }
-  });
+  const todo = todos.find((todo) => todo.index === ind);
+  todo.completed = !todo.completed;
 
   Store.updateTodos(todos);
   displayTodo();
@@ -18,7 +13,7 @@ const clearCompleted = () => {
   const todos = Store.getTodos();
   const newTodos = todos.filter((todo) => todo.completed === false);
 
-  Store.updateTodos(newTodos);
+  Store.updateTodos(Store.updateIndex(newTodos));
   displayTodo();
 };
 

@@ -16,16 +16,21 @@ class Store {
     localStorage.setItem('todos', JSON.stringify(todos));
   };
 
+  static updateIndex = (todos) => {
+    let indexedTodo = [];
+    todos.forEach((todo, todoIndex) => {
+      todo.index = todoIndex;
+      indexedTodo = [...indexedTodo, todo];
+    });
+    return indexedTodo;
+  };
+
   // remove todo item from local storage
   static deleteTodo = (ind) => {
     const todos = this.getTodos();
     const newTodos = todos.filter((todo) => todo.index !== ind);
-    let indexedTodo = [];
-    newTodos.forEach((todo, todoIndex) => {
-      todo.index = todoIndex;
-      indexedTodo = [...indexedTodo, todo];
-    });
-    localStorage.setItem('todos', JSON.stringify(indexedTodo));
+
+    localStorage.setItem('todos', JSON.stringify(this.updateIndex(newTodos)));
   };
 }
 
@@ -71,7 +76,7 @@ const createTodo = () => {
   const todo = {
     description: `${description}`,
     completed: false,
-    index: `${Store.getTodos().length}`,
+    index: Store.getTodos().length,
   };
 
   // add new todo to local storage
