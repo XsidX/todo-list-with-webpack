@@ -10,12 +10,12 @@ class Store {
     localStorage.setItem('todos', JSON.stringify(todos));
   };
 
-  // update todos
-
+  // update todos in local storage
   static updateTodos = (todos) => {
     localStorage.setItem('todos', JSON.stringify(todos));
   };
 
+  // update todo index in local storage
   static updateIndex = (todos) => {
     let indexedTodo = [];
     todos.forEach((todo, todoIndex) => {
@@ -69,7 +69,6 @@ const displayTodo = () => {
 const createTodo = () => {
   // get todo description
   const description = document.querySelector('#new-todo').value;
-
   if (!description) return;
 
   // create new todo object
