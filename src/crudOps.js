@@ -46,7 +46,7 @@ const displayTodo = () => {
       <span class="icon-check" data-completed="${completed}"></span>
       <i class="fa-solid fa-check" data-completed="${completed}"></i>
     </button>
-    <input class="todo-item" type="text" data-todo="${index}" data-completed="${completed}" value=${description} />
+    <input class="todo-item" type="text" data-todo="${index}" data-completed="${completed}" value='${description}' />
     <button class="delete" data-del="${index}"><i class="fa-solid fa-trash-can" ></i></button>
     <svg
       width="25px"
@@ -88,7 +88,7 @@ const createTodo = () => {
 const updateTodos = (el) => {
   el.addEventListener('keyup', () => {
     const todos = Store.getTodos();
-    const todoNum = el.dataset.todo;
+    const todoNum = +el.dataset.todo;
     const todo = todos.find((todo) => todo.index === todoNum);
     todo.description = el.value.trim();
 
