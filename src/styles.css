@@ -30,10 +30,6 @@ button {
   display: none;
 }
 
-.test {
-  border: solid red 1px;
-}
-
 .container {
   background-color: #fff;
   filter:

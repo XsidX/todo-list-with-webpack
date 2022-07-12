@@ -10,12 +10,12 @@ class Store {
     localStorage.setItem('todos', JSON.stringify(todos));
   };
 
-  // update todos
-
+  // update todos in local storage
   static updateTodos = (todos) => {
     localStorage.setItem('todos', JSON.stringify(todos));
   };
 
+  // update todo index in local storage
   static updateIndex = (todos) => {
     let indexedTodo = [];
     todos.forEach((todo, todoIndex) => {
@@ -46,7 +46,7 @@ const displayTodo = () => {
       <span class="icon-check" data-completed="${completed}"></span>
       <i class="fa-solid fa-check" data-completed="${completed}"></i>
     </button>
-    <input class="todo-item" type="text" data-todo="${index}" data-completed="${completed}" value=${description} />
+    <input class="todo-item" type="text" data-todo="${index}" data-completed="${completed}" value='${description}' />
     <button class="delete" data-del="${index}"><i class="fa-solid fa-trash-can" ></i></button>
     <svg
       width="25px"
@@ -69,7 +69,6 @@ const displayTodo = () => {
 const createTodo = () => {
   // get todo description
   const description = document.querySelector('#new-todo').value;
-
   if (!description) return;
 
   // create new todo object
@@ -89,7 +88,7 @@ const createTodo = () => {
 const updateTodos = (el) => {
   el.addEventListener('keyup', () => {
     const todos = Store.getTodos();
-    const todoNum = el.dataset.todo;
+    const todoNum = +el.dataset.todo;
     const todo = todos.find((todo) => todo.index === todoNum);
     todo.description = el.value.trim();
 
