@@ -30,3 +30,12 @@ describe('addTodo()', () => {
   });
 });
 
+describe('deleteTodo()', () => {
+  it('should remove a todo item from local storage', () => {
+    const index = 0;
+    const todo = { description: 'test', completed: false, index };
+    Store.addTodo(todo);
+    Store.deleteTodo(index);
+    expect(JSON.parse(mockTodoStore.todos)).toEqual([]);
+  });
+});
