@@ -42,6 +42,12 @@ You're free to use this project however you like it for educational purposes.
 - Twitter: [@\_sid_o](https://twitter.com/_sid_o_)
 - LinkedIn: [Sidney Kaguli](https://www.linkedin.com/in/sidney-kaguli-0116801a6/)
 
+👤 **Fadahunsi seyi samuel**
+
+- GitHub: [@Fadahunsi](https://github.com/Fadahunsiseyi)
+- Twitter: [@Fadahunsi](https://twitter.com/@Fadahunsiseyi_)
+- LinkedIn: [Fadahunsi](https://www.linkedin.com/in/fadahunsi-seyi-samuel-49191a209/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
