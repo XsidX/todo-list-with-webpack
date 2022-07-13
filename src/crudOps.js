@@ -1,4 +1,4 @@
-class Store {
+export class Store {
   // get todo items from local storage
   static getTodos = () => JSON.parse(localStorage.getItem('todos')) || [];
 
@@ -96,6 +96,4 @@ const updateTodos = (el) => {
   });
 };
 
-export {
-  Store, displayTodo, createTodo, updateTodos,
-};
+export { displayTodo, createTodo, updateTodos };
