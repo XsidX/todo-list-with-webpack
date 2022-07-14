@@ -1,7 +1,6 @@
 import { Store, editTodos } from './crudOps.js';
 import { updateStatus, clearCompleted } from './status.js';
 
-
 describe('editTodos()', () => {
   beforeEach(() => {
     localStorage.setItem('todos', JSON.stringify([]));
