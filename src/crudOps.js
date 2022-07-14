@@ -34,8 +34,8 @@ export class Store {
   };
 }
 
-const listContainer = document.querySelector('.list-container');
 const displayTodo = () => {
+  const listContainer = document.querySelector('.list-container');
   listContainer.innerHTML = '';
   const todos = Store.getTodos();
   todos.forEach(({ description, completed, index }) => {
@@ -85,15 +85,12 @@ const createTodo = () => {
   displayTodo();
 };
 
-const updateTodos = (el) => {
-  el.addEventListener('keyup', () => {
-    const todos = Store.getTodos();
-    const todoNum = +el.dataset.todo;
-    const todo = todos.find((todo) => todo.index === todoNum);
-    todo.description = el.value.trim();
+const editTodos = (todoIndex, description) => {
+  const todos = Store.getTodos();
+  const todo = todos.find((todo) => todo.index === todoIndex);
+  todo.description = description;
 
-    Store.updateTodos(todos);
-  });
+  Store.updateTodos(todos);
 };
 
-export { displayTodo, createTodo, updateTodos };
+export { displayTodo, createTodo, editTodos };
