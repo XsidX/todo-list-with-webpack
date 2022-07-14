@@ -5,7 +5,7 @@ import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
 
 import {
-  Store, displayTodo, createTodo, updateTodos,
+  Store, displayTodo, createTodo, editTodos,
 } from './crudOps.js';
 import { updateStatus, clearCompleted } from './status';
 import './styles.css';
@@ -39,7 +39,12 @@ listContainer.addEventListener('click', (e) => {
   const clicked = e.target.closest('.todo-item');
   if (!clicked) return;
 
-  updateTodos(clicked);
+  clicked.addEventListener('keyup', () => {
+    const todoIndex = +clicked.dataset.todo;
+    const description = clicked.value.trim();
+
+    editTodos(todoIndex, description);
+  });
 });
 
 // Event: update status
